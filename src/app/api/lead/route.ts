@@ -1,5 +1,3 @@
-import { LeadForm } from "@/components/LeadForm";
-
 export async function POST(request: Request) {
   const body = (await request.json()) as Record<string, string>;
   const name = body.name?.trim();
