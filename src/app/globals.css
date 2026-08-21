@@ -411,18 +411,20 @@ h3 {
   filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.4));
 }
 
-.logo-plate-nav,
-.logo-plate-footer {
-  background: #f3eee4;
-}
-
 .logo-plate-nav {
+  background: #f3eee4;
   padding: 0.18rem 0.32rem 0.22rem;
   border-radius: 0.95rem;
 }
 
 .logo-plate-footer {
-  padding: 0.35rem 0.45rem 0.4rem;
+  background: transparent;
+  padding: 0;
+  border-radius: 1.1rem;
+  overflow: hidden;
+}
+
+.logo-plate-footer img {
   border-radius: 1.1rem;
 }
 

@@ -7,6 +7,12 @@ const sizes = {
   footer: "h-[72px] w-auto md:h-[92px]",
 } as const;
 
+const assets = {
+  hero: { src: "/logo.png", width: 297, height: 385 },
+  nav: { src: "/logo.png", width: 297, height: 385 },
+  footer: { src: "/logo-solid.png", width: 755, height: 977 },
+} as const;
+
 export function SiteLogo({
   size,
   priority = false,
@@ -14,13 +20,15 @@ export function SiteLogo({
   size: keyof typeof sizes;
   priority?: boolean;
 }) {
+  const asset = assets[size];
+
   return (
     <span className={`logo-plate logo-plate-${size}`}>
       <Image
-        src="/logo.png"
+        src={asset.src}
         alt={site.name}
-        width={301}
-        height={372}
+        width={asset.width}
+        height={asset.height}
         className={`${sizes[size]} object-contain`}
         priority={priority}
       />
