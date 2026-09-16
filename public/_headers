@@ -1,0 +1,9 @@
+/og-share.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=604800, immutable
+  Access-Control-Allow-Origin: *
+
+/og.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=604800, immutable
+  Access-Control-Allow-Origin: *

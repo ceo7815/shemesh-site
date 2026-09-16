@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: thankYouMeta.title,
     description: "מומחה יחזור אליכם בקרוב מאוד. השאירו את הטלפון בהישג יד והכינו שאלות.",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "שמש מימוש זכויות" }],
+    images: [{ url: "/og-share.jpg", width: 1200, height: 630, alt: "שמש מימוש זכויות", type: "image/jpeg" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og.png"],
+    images: ["/og-share.jpg"],
   },
 };
 
