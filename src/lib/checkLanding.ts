@@ -1,3 +1,5 @@
+export const CHECK_LANDING_ENABLED = false;
+
 export const CHECKOUT_URL =
   "https://pay.grow.link/OTgyNTI~f7a4e60528453102a26afdbac2b25dbb-Mzg1MzA3Nw";
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
 import Script from "next/script";
-import { checkMeta, META_PIXEL_ID } from "@/lib/checkLanding";
+import { CHECK_LANDING_ENABLED, checkMeta, META_PIXEL_ID } from "@/lib/checkLanding";
 import "./check.css";
 
 const heebo = Heebo({
@@ -10,25 +10,38 @@ const heebo = Heebo({
   variable: "--font-heebo",
 });
 
-export const metadata: Metadata = {
-  title: checkMeta.title,
-  description: checkMeta.shareDescription,
-  openGraph: {
-    title: checkMeta.title,
-    description: checkMeta.shareDescription,
-    type: "website",
-    url: "/check/",
-    images: [{ url: "/og-share.jpg", width: 1200, height: 630, alt: "שמש מימוש זכויות", type: "image/jpeg" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: checkMeta.title,
-    description: checkMeta.shareDescription,
-    images: ["/og-share.jpg"],
-  },
-};
+export const metadata: Metadata = CHECK_LANDING_ENABLED
+  ? {
+      title: checkMeta.title,
+      description: checkMeta.shareDescription,
+      openGraph: {
+        title: checkMeta.title,
+        description: checkMeta.shareDescription,
+        type: "website",
+        url: "/check/",
+        images: [{ url: "/og-share.jpg", width: 1200, height: 630, alt: "שמש מימוש זכויות", type: "image/jpeg" }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: checkMeta.title,
+        description: checkMeta.shareDescription,
+        images: ["/og-share.jpg"],
+      },
+    }
+  : {
+      robots: { index: false, follow: false },
+    };
 
 export default function CheckLayout({ children }: LayoutProps<"/check">) {
+  if (!CHECK_LANDING_ENABLED) {
+    return (
+      <>
+        <meta httpEquiv="refresh" content="0;url=/" />
+        {children}
+      </>
+    );
+  }
+
   return (
     <div className={`check-lp ${heebo.className}`}>
       <Script id="meta-pixel" strategy="afterInteractive">
