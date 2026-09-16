@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Rubik } from "next/font/google";
+import { ConstructionScreen } from "@/components/ConstructionScreen";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -19,24 +20,29 @@ const ogImage = {
 
 const shareImage = `${site.url}/og-share.jpg`;
 
+const pageTitle = site.constructionMode ? "האתר בשיפוצים | שמש מימוש זכויות" : site.shareTitle;
+const pageDescription = site.constructionMode
+  ? "האתר בשיפוצים כרגע. נשוב לפעילות מחר."
+  : site.shareDescription;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: site.shareTitle,
-  description: site.shareDescription,
+  title: pageTitle,
+  description: pageDescription,
   applicationName: site.name,
   openGraph: {
     type: "website",
     locale: "he_IL",
     url: "/",
     siteName: site.name,
-    title: site.shareTitle,
-    description: site.shareDescription,
+    title: pageTitle,
+    description: pageDescription,
     images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.shareTitle,
-    description: site.shareDescription,
+    title: pageTitle,
+    description: pageDescription,
     images: [shareImage],
   },
 };
@@ -52,8 +58,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="he" dir="rtl" className={`${rubik.variable} h-full antialiased`}>
       <head>
-        <meta property="og:title" content={site.shareTitle} />
-        <meta property="og:description" content={site.shareDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={shareImage} />
         <meta property="og:image:secure_url" content={shareImage} />
         <meta property="og:image:type" content="image/jpeg" />
@@ -65,7 +71,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <meta name="twitter:image" content={shareImage} />
         <link rel="image_src" href={shareImage} />
       </head>
-      <body className="min-h-full bg-cream font-sans text-ink">{children}</body>
+      <body className="min-h-full bg-cream font-sans text-ink">
+        {site.constructionMode ? <ConstructionScreen /> : children}
+      </body>
     </html>
   );
 }

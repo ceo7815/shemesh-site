@@ -2,6 +2,7 @@ export const site = {
   name: "שמש מימוש זכויות בע״מ",
   shortName: "שמש",
   url: "https://shemesh-site.pages.dev",
+  constructionMode: true,
   shareTitle: "שמש מימוש זכויות | מימוש מלא של זכויות האזרח",
   shareDescription:
     "פטורי מס על כספים פנסיוניים, הסרת עיקולים ותביעות אובדן כושר עבודה. מוציאים לכם את הכסף שמגיע — לא רק מייעצים.",
