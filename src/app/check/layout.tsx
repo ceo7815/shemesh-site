@@ -12,16 +12,19 @@ const heebo = Heebo({
 
 export const metadata: Metadata = {
   title: checkMeta.title,
-  description: checkMeta.description,
+  description: checkMeta.shareDescription,
   openGraph: {
     title: checkMeta.title,
-    description: checkMeta.description,
+    description: checkMeta.shareDescription,
     type: "website",
+    url: "/check/",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "שמש מימוש זכויות" }],
   },
   twitter: {
     card: "summary_large_image",
     title: checkMeta.title,
-    description: checkMeta.description,
+    description: checkMeta.shareDescription,
+    images: ["/og.png"],
   },
 };
 
