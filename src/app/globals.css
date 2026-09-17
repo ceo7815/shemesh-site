@@ -1629,12 +1629,22 @@ html.a11y-motion * {
 }
 
 .const-logo {
+  position: relative;
   width: 7.5rem;
   overflow: hidden;
   border-radius: 1.2rem;
   background: #f3eee4;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
   animation: const-pop 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.const-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 2px oklch(0.76 0.12 82 / 0.45);
 }
 
 .const-logo img {
@@ -1646,6 +1656,12 @@ html.a11y-motion * {
   margin-top: 1.35rem;
   font-size: clamp(1.85rem, 6vw, 2.7rem);
   line-height: 1.15;
+  background: linear-gradient(100deg, #f3eee4 20%, var(--gold-2) 50%, #f3eee4 80%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: const-shimmer 4.5s ease-in-out infinite;
 }
 
 .const-card p {
@@ -1664,6 +1680,7 @@ html.a11y-motion * {
   margin: 1.25rem auto 0;
   border-radius: 999px;
   background: linear-gradient(to left, transparent, var(--mustard), transparent);
+  animation: const-line 2.8s ease-in-out infinite;
 }
 
 .const-brand {
@@ -1725,13 +1742,41 @@ html.a11y-motion * {
   }
 }
 
+@keyframes const-shimmer {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes const-line {
+  0%,
+  100% {
+    width: 4.5rem;
+    opacity: 0.7;
+  }
+  50% {
+    width: 7rem;
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .const-sun,
   .const-dust span,
   .const-tape span,
   .const-card,
   .const-logo,
-  .const-badge {
+  .const-badge,
+  .const-card h1,
+  .const-line {
     animation: none;
+  }
+
+  .const-card h1 {
+    color: #f3eee4;
+    background: none;
   }
 }

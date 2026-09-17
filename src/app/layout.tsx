@@ -22,7 +22,7 @@ const shareImage = `${site.url}/og-share.jpg`;
 
 const pageTitle = site.constructionMode ? "האתר בשיפוצים | שמש מימוש זכויות" : site.shareTitle;
 const pageDescription = site.constructionMode
-  ? "האתר בשיפוצים כרגע. נשוב לפעילות מחר."
+  ? "האתר בשיפוצים כרגע. נשוב לפעילות בהקדם, עד להודעה חדשה."
   : site.shareDescription;
 
 export const metadata: Metadata = {

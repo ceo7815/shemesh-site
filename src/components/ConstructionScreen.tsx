@@ -14,12 +14,12 @@ export function ConstructionScreen() {
         <span />
       </div>
       <div className="const-tape const-tape-top" aria-hidden="true">
-        <span>בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · </span>
-        <span>בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · </span>
+        <span>בשיפוצים · עד להודעה חדשה · בשיפוצים · עד להודעה חדשה · </span>
+        <span>בשיפוצים · עד להודעה חדשה · בשיפוצים · עד להודעה חדשה · </span>
       </div>
 
       <div className="const-card">
-        <span className="const-badge">עד מחר</span>
+        <span className="const-badge">עד להודעה חדשה</span>
         <div className="const-logo">
           <Image
             src="/logo-solid.png"
@@ -30,14 +30,14 @@ export function ConstructionScreen() {
           />
         </div>
         <h1>האתר בשיפוצים</h1>
-        <p>אנחנו משדרגים את החוויה כרגע. נשוב לפעילות מחר — תודה על הסבלנות.</p>
+        <p>אנחנו משדרגים את החוויה כרגע. נשוב לפעילות בהקדם — תודה על הסבלנות.</p>
         <span className="const-line" aria-hidden="true" />
         <p className="const-brand">{site.shortName} מימוש זכויות</p>
       </div>
 
       <div className="const-tape const-tape-bottom" aria-hidden="true">
-        <span>בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · </span>
-        <span>בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · בשיפוצים · נשוב מחר · </span>
+        <span>בשיפוצים · עד להודעה חדשה · בשיפוצים · עד להודעה חדשה · </span>
+        <span>בשיפוצים · עד להודעה חדשה · בשיפוצים · עד להודעה חדשה · </span>
       </div>
     </main>
   );
